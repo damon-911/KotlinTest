@@ -74,7 +74,7 @@ fun TitleBar() {
             .background(Color(0xFF997EE8))
     ) {
         Text(
-            text = "Wanted Challenge",
+            text = "List Controller",
             fontSize = 24.sp
         )
     }

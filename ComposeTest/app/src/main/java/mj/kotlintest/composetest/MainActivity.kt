@@ -11,9 +11,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import mj.kotlintest.composetest.ui.CupcakeScreen
 import mj.kotlintest.composetest.ui.FirstScreen
 import mj.kotlintest.composetest.ui.ListScreen
 import mj.kotlintest.composetest.ui.theme.ComposeTestTheme
+import mj.kotlintest.composetest.ui.theme.CupcakeTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +28,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TabApp() {
-    val tabTitles = listOf("Tab 1", "Tab 2")
+    val tabTitles = listOf("Tab 1", "Tab 2", "Tab 3")
     var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     Column(Modifier.fillMaxSize()) {
@@ -58,6 +60,9 @@ fun TabApp() {
                 FirstScreen(modifier = Modifier.fillMaxSize())
             }
             1 -> ListScreen()
+            2 -> CupcakeTheme {
+                CupcakeScreen()
+            }
         }
     }
 }
